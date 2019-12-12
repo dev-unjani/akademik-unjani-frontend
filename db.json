@@ -1,0 +1,25 @@
+{
+    "user": [
+        {
+        "title":  "Pengguna",
+        "columns":  [
+            {
+                "name": "Email",
+                "options":  {
+                "filter": true
+                }
+            },
+            {
+                "name": "Nama",
+                "options":  {
+                "filter": true
+                }
+            }
+        ],
+            "data": [
+            ["alesna97@gmail.com","anjas lesmana"],
+            ["anjas.lesmana@doterb.com","anjas"]
+            ]
+        }
+    ]
+  }
