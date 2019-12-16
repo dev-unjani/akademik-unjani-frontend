@@ -17,6 +17,7 @@ import {
   Error,
   NotFound
 } from '../pageListAsync';
+import PrivateRoute from './PrivateRoute';
 
 class Application extends React.Component {
   render() {
@@ -24,8 +25,8 @@ class Application extends React.Component {
     return (
       <Dashboard history={history} changeMode={changeMode}>
         <Switch>
-          <Route exact path="/app" component={DashboardPage} />
-          <Route path="/app/dashboard" component={DashboardPage} />
+          <PrivateRoute exact path="/app" component={DashboardPage} />
+          <PrivateRoute path="/app/dashboard" component={DashboardPage}/>
           <Route path="/app/system/user" component={User} />
           <Route path="/app/system/role" component={Role} />
           <Route path="/app/master-university/identity" component={Identity} />

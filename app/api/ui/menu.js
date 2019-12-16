@@ -1,25 +1,26 @@
 module.exports = [
   {
+    key: 'dashboard',
+    name: 'Dashboard',
+    title: true,
+  },
+  {
+    key:  'dashboard',
+    name: 'Dashboard',
+    icon: 'ios-person', 
+   link: '/app/dashboard',
+  },
+  {
+    key: 'list',
+    name: 'Mahasiswa & Dosen',
+    title: true,
+  },
+  {
     key:  'home',
     name: 'Home',
     icon: 'ios-home',
     child: [
-      {
-        key: 'dashboard',
-        name: 'Dashboard',
-        title: true,
-      },
-      {
-        key:  'dashboard',
-        name: 'Dashboard',
-        icon: 'ios-person', 
-       link: '/app/dashboard',
-      },
-      {
-        key: 'list',
-        name: 'Mahasiswa & Dosen',
-        title: true,
-      },
+      
       {
         key : 'list-student',
         name: 'Daftar Mahasiswa',

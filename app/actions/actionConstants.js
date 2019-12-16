@@ -1,3 +1,6 @@
+// AUTHENTICATION
+export const ON_LOGGED_IN = 'ON_LOGGED_IN'; 
+
 // Global UI Action
 export const TOGGLE_SIDEBAR = 'TOGGLE_SIDEBAR';
 export const OPEN_MENU = 'OPEN_MENU';
@@ -98,3 +101,5 @@ export const DELETE_BOARD = 'DELETE_BOARD';
 
 // Notification Form
 export const CLOSE_NOTIF = 'CLOSE_NOTIF';
+
+

@@ -69,7 +69,7 @@ export const Table = Loadable({
   loading: Loading,
 });
 export const Login = Loadable({
-  loader: () => import('./Pages/Users/Login'),
+  loader: () => import('./Pages/Users/Auth/login/index'),
   loading: Loading,
 });
 export const LoginDedicated = Loadable({
@@ -77,11 +77,11 @@ export const LoginDedicated = Loadable({
   loading: Loading,
 });
 export const Register = Loadable({
-  loader: () => import('./Pages/Users/Register'),
+  loader: () => import('./Pages/Users/Auth/register/index'),
   loading: Loading,
 });
 export const ResetPassword = Loadable({
-  loader: () => import('./Pages/Users/ResetPassword'),
+  loader: () => import('./Pages/Users/Auth/ResetPassword'),
   loading: Loading,
 });
 export const NotFound = Loadable({

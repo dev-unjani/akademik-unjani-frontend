@@ -5,10 +5,23 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { LoginForm } from 'dan-components';
 import styles from 'dan-components/Forms/user-jss';
+import {connect} from 'react-redux';
+import {userAuth} from 'dan-actions/userAction';
+import API from '../../../../../services/auth/login';
 
 class Login extends React.Component {
   state = {
     valueForm: []
+  }
+
+  componentDidMount = () => {
+    this.getData();
+  }
+
+  getData = () => {
+    API.getData().then(result => {
+      console.log(result);
+  });
   }
 
   submitForm(values) {
@@ -36,7 +49,7 @@ class Login extends React.Component {
         </Helmet>
         <div className={classes.container}>
           <div className={classes.userFormWrap}>
-            <LoginForm onSubmit={(values) => this.submitForm(values)} />
+            <LoginForm onSubmit={(values) => this.submitForm(values)} onClick={this.props.onClickLogin}/>
           </div>
         </div>
       </div>
@@ -45,7 +58,21 @@ class Login extends React.Component {
 }
 
 Login.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Login);
+const reducer = 'login';
+const mapStateToProps = state => ({
+  login: state.getIn([reducer, 'login'])
+});
+
+const mapDispatchToProps = dispatch => ({
+  onClickLogin: () => dispatch(userAuth)
+});
+
+const LoginMapped = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Login);
+
+export default (withStyles(styles)(LoginMapped));
